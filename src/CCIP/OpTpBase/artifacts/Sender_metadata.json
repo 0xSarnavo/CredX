@@ -1,0 +1,280 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "currentBalance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "calculatedFees",
+						"type": "uint256"
+					}
+				],
+				"name": "NotEnoughBalance",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "messageId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint64",
+						"name": "destinationChainSelector",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "text",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "feeToken",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fees",
+						"type": "uint256"
+					}
+				],
+				"name": "MessageSent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferRequested",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "acceptOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "text",
+						"type": "string"
+					}
+				],
+				"name": "sendMessage",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "messageId",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"sendMessage(string)": {
+					"details": "Assumes your contract has sufficient LINK.",
+					"params": {
+						"text": "The string text to be sent."
+					},
+					"returns": {
+						"messageId": "The ID of the message that was sent."
+					}
+				}
+			},
+			"title": "- A simple contract for sending string data across chains.",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"acceptOwnership()": {
+					"notice": "Allows an ownership transfer to be completed by the recipient."
+				},
+				"constructor": {
+					"notice": "Constructor initializes the contract with the router address."
+				},
+				"owner()": {
+					"notice": "Get the current owner"
+				},
+				"transferOwnership(address)": {
+					"notice": "Allows an owner to begin transferring ownership to a new address."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/CCIP/OpTpBase/SenderOP.sol": "Sender"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts-ccip/src/v0.8/ccip/interfaces/IRouterClient.sol": {
+			"keccak256": "0x7f2fdd93e516b7476c6fab099f6806adf5ceaf399b0cc415f6b9ede890f2379b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://14e2547e54a0e225d1aa654d49ad47a169f966b985456612af449eec610189ea",
+				"dweb:/ipfs/QmcWVnkJ6TKcUR4koDQQGiYMEt7vJ6WG9XcrwbPiPDHoP9"
+			]
+		},
+		"@chainlink/contracts-ccip/src/v0.8/ccip/libraries/Client.sol": {
+			"keccak256": "0x8af3ac1085c87342373772fb1a0107c7b90258e6bfed318ab2a601a14477e679",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://14395fefc8310c9a355262359c8f51036f83c004982fb600164c2a007629f81e",
+				"dweb:/ipfs/QmeCLr8a5bDVyLQm8v947ULgV4CZmUeQPjVyWixzieBD5o"
+			]
+		},
+		"@chainlink/contracts-ccip/src/v0.8/shared/access/ConfirmedOwner.sol": {
+			"keccak256": "0xdcb0e9135ddbe71ee27ba99fa06656960c66c964cf2ecb29696da1c1427d9861",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f914a1b638300e82d8f5a020a4195235599afebab4ef1e10c6992f3c90e7df3e",
+				"dweb:/ipfs/Qmf2MbuVB16qbCGii3U5cjcBvVjAHHYzKp9voJa2eDch9B"
+			]
+		},
+		"@chainlink/contracts-ccip/src/v0.8/shared/access/ConfirmedOwnerWithProposal.sol": {
+			"keccak256": "0x927e505bb87a58ea04d1a9efe945f4bf4093e88b618b6fede3b9c68e1e63d989",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40f41d2c6eb2e11b9952350013d2fd57ec44c01f60fc33855bdb8d84ad352008",
+				"dweb:/ipfs/Qmbi7J7LZzvy8imXMfYpRMiKtr9ewcAHfeE4s3zLm11QY4"
+			]
+		},
+		"@chainlink/contracts-ccip/src/v0.8/shared/access/OwnerIsCreator.sol": {
+			"keccak256": "0x895af02d6a3df2930bbb6ec1f2d68118b492ca6e710ba0c34fcb6b574a0906aa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c4c69fab5eea1c0448f856a51d7e5736454fe5cc083d36c60bf3ee23bb3d0e8e",
+				"dweb:/ipfs/QmP4fYQ9k7xeZms6cwnqnQuuAkRkeE2TWewyvCD8Mrc2DZ"
+			]
+		},
+		"@chainlink/contracts-ccip/src/v0.8/shared/interfaces/IOwnable.sol": {
+			"keccak256": "0x885de72b7b4e4f1bf8ba817a3f2bcc37fd9022d342c4ce76782151c30122d767",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://17c636625a5d29a140612db496d2cca9fb4b48c673adb0fd7b3957d287e75921",
+				"dweb:/ipfs/QmNoBX8TY424bdQWyQC7y3kpKfgxyWxhLw7KEhhEEoBN9q"
+			]
+		},
+		"@chainlink/contracts/src/v0.8/shared/interfaces/LinkTokenInterface.sol": {
+			"keccak256": "0xd3643595b0a46f577fff806736cbe4e3f81707c93fb1693a8a7960466e5cd321",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f7cccfc386f9cdb9037db66dd85a31347af8b733f39a18cbc12dbf1f5812d02d",
+				"dweb:/ipfs/QmcE3Hef9XLSbthiS3DKQFF1ZpYDZsPLHwW1DY5iUGAfcd"
+			]
+		},
+		"src/CCIP/OpTpBase/SenderOP.sol": {
+			"keccak256": "0xc63767771a283577997924118132351838b014b0c922c3a8d35e374e1d14657b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cfc3d40628459f43c230bccc16dc99dd36362462cb5802dd8e97a3c8e303cd7c",
+				"dweb:/ipfs/QmQx1PPFcX64StYojyCDvnKrJNJv2mnhkmMFueCKs3szDE"
+			]
+		}
+	},
+	"version": 1
+}

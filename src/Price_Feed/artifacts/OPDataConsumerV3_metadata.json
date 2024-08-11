@@ -1,0 +1,80 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getChainlinkDataFeedLatestAnswer",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Network: Sepolia Aggregator: BTC/USD Address: 0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43"
+				},
+				"getChainlinkDataFeedLatestAnswer()": {
+					"notice": "Returns the latest answer."
+				}
+			},
+			"notice": "If you are reading data feeds on L2 networks, you must check the latest answer from the L2 Sequencer Uptime Feed to ensure that the data is accurate in the event of an L2 sequencer outage. See the https://docs.chain.link/data-feeds/l2-sequencer-feeds page for details.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/Price_Feed/OP_PriceFeed.sol": "OPDataConsumerV3"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0x257a8d28fa83d3d942547c8e129ef465e4b5f3f31171e7be4739a4c98da6b4f0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6d39e11b1dc7b9b8ccdabbc9be442ab7cda4a81c748f57e316dcb1bcb4a28bf9",
+				"dweb:/ipfs/QmaG6vz6W6iEUBsbHSBob5mdcitYxWjoygxREHpsJHfWrS"
+			]
+		},
+		"src/Price_Feed/OP_PriceFeed.sol": {
+			"keccak256": "0x0b3f7b38e634ec9ed7e2614f235ae1cccb6ade9dca13b8b555ba65993a170e3d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://26a29633bc48bff15edfb4c5bb51c660385589d50673f1708a74032d0dc950dd",
+				"dweb:/ipfs/Qma2AiCKsQSMPoiuhh2H6i21pmZt6jL5ogfkrm4XMquxDq"
+			]
+		}
+	},
+	"version": 1
+}
